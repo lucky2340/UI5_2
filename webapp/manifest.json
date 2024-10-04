@@ -1,6 +1,7 @@
 {
     "sap.app": {
         "type": "application",
+        
         "id": "sap.cs.abap",
         "dataSources": {
             "mainService":{
