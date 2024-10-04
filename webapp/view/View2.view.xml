@@ -1,0 +1,95 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 
+          xmlns:f="sap.ui.layout.form"  
+          controllerName="sap.cs.abap.controller.View2">
+    <Page showNavButton="true" navButtonPress="onBack">
+        <ObjectHeader title="{PRODUCT_ID}" intro="{NAME}"
+                      icon="{image}"
+                      number="{PRICE}" numberUnit="{CURRENCY_CODE}">
+        </ObjectHeader>
+        <IconTabBar>
+            <items>
+                <IconTabFilter icon="sap-icon://home">
+                    <f:SimpleForm>
+                        <Label text="Name"></Label>
+                        <Text text="{PRODUCT_ID}"></Text>
+                        <Label text="Taste"></Label>
+                        <Text text="{CATEGORY}"></Text>
+                        <Label text="Price"></Label>
+                        <Text text="{PRICE}{CURRENCY_CODE}"></Text>                                                
+                    </f:SimpleForm>
+                </IconTabFilter>
+                <IconTabFilter icon="sap-icon://supplier">
+                    <Table id="idTbleS" items="{fruit>/supplier}"
+                    mode="Delete" delete="onDelete">
+                        <headerToolbar>
+                            <Toolbar>
+                                <ToolbarSpacer></ToolbarSpacer>
+                                <Button text="Refresh" icon="sap-icon://refresh" press="onRefresh"></Button>
+                            </Toolbar>
+                        </headerToolbar>
+                        <columns>
+                            <Column>
+                                <Label text="Name"></Label>
+                            </Column>
+                            <Column>
+                                <Label text="Contact Number"></Label>
+                            </Column>
+                            <Column>
+                                <Label text="Contact Person"></Label>
+                            </Column>
+                            <Column>
+                                <Label text="City"></Label>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Text text="{fruit>name}"></Text>
+                                    <Text text="{fruit>contactNo}"></Text>
+                                    <Text text="{fruit>person}"></Text>
+                                    <Input value="{fruit>city}"></Input>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </IconTabFilter>
+                 <IconTabFilter icon="sap-icon://help">
+                    <Table id="batchTable" items="{bunk>/vendor}" delete="onDeleteS" mode="Delete">
+                        <headerToolbar>
+                             <Toolbar>
+                                  <content>
+                                    <Button icon="sap-icon://add" press="onAddRow"></Button>
+                                    <Button icon="sap-icon://save" press="onBatchSave"></Button>
+                                 </content>
+                             </Toolbar>
+                        </headerToolbar>
+                        <columns>
+                            <Column>
+                                <Label text="Name"></Label>
+                            </Column>
+                            <Column>
+                                <Label text="Contact Number"></Label>
+                            </Column>
+                            <Column>
+                                <Label text="Contact Person"></Label>
+                            </Column>
+                            <Column>
+                                <Label text="City"></Label>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Input value="{bunk>name}"></Input>
+                                    <Input value="{bunk>contactNo}"></Input>
+                                    <Input value="{bunk>person}"></Input>
+                                    <Input value="{bunk>city}"></Input>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </IconTabFilter>
+            </items>
+        </IconTabBar>
+    </Page>
+</mvc:View>

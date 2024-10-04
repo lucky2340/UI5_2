@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <script src="https://ui5.sap.com/resources/sap-ui-core.js" 
+            data-sap-ui-libs="sap.m"
+            data-sap-ui-theme="sap_fiori_3_dark" 
+            data-sap-ui-resourceroots='{
+                                          "sap.cs.abap":"./"
+                                       }'
+            data-sap-ui-bindingSyntax="complex">
+        </script>
+    <script>
+        var oCompCont = new sap.ui.core.ComponentContainer({
+            "name": "sap.cs.abap"
+        });
+        oCompCont.placeAt("myContent");
+    </script>
+</head>
+
+<body class="sapUIBody">
+    <div id="myContent"></div>
+</body>
+
+</html>

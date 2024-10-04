@@ -1,0 +1,27 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" controllerName="sap.cs.abap.controller.Add">
+    <Page>
+        <Text text="Manage Product"></Text>
+            <f:SimpleForm editable="true">
+                <Label text="Product Id"></Label>
+                <Input value="{hunk>/myData/PRODUCT_ID}" id="idPrdId" submit="onSubmitProduct"></Input>
+                <Button text="Get most expensive" press="onMexp"></Button>
+                <Label text="Description"></Label>
+                <Input value="{hunk>/myData/DESCRIPTION}"></Input>
+                <Label text="Suppier"></Label>
+                <Input value="{hunk>/myData/SUPPLIER_ID}"></Input>
+                <Label text="Supplier Name"></Label>
+                <Input value="{hunk>/myData/SUPPLIER_NAME}"></Input> 
+                <Label text="Price"></Label>
+                <Input value="{hunk>/myData/PRICE}"></Input>
+                <Label text="Currency"></Label>
+                <Input value="{hunk>/myData/CURRENCY_CODE}"></Input>   
+                <Label text="Unit"></Label>
+                <Input value="{hunk>/myData/MEASURE_UNIT}"></Input>                                             
+            </f:SimpleForm>
+        <Toolbar>
+            <ToolbarSpacer ></ToolbarSpacer>
+            <Button id="idSaveBtn" type="Accept" text="Save" press="onSave"></Button>
+            <Button type="Reject" text="Cancel" press="onCancel"></Button>
+        </Toolbar>
+    </Page>
+</mvc:View>

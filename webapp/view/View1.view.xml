@@ -1,0 +1,34 @@
+<mvc:View xmlns:tnt="sap.tnt" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.cs.abap.controller.View1">
+    <Page>
+        <!-- <Toolbar>
+            <ToolbarSpacer></ToolbarSpacer>
+            <Button text="Next Page" press="onNext" icon="sap-icon://arrow-right"></Button>
+        </Toolbar> -->
+        <SearchField search="onSearch" liveChange="onSearch" showRefreshButton="true"></SearchField>
+        <List id="idList" items="{/ProductSet}" mode="SingleSelectMaster" itemPress="onItemSelect">
+            <!-- <headerToolbar>
+                <Toolbar>
+                    <ToolbarSpacer></ToolbarSpacer>
+                    <Button icon="sap-icon://delete" press="onMultiDelete"></Button>
+                </Toolbar>
+            </headerToolbar> -->
+            <ObjectListItem title="{PRODUCT_ID}" intro="{NAME}"
+                            icon="{sap-icon://product}"
+                            number="{PRICE}" numberUnit="{CURRENCY_CODE}" type="Navigation">
+                <!-- <firstStatus>
+                    <ObjectStatus text="{path:'CATEGORY'}" 
+                                  state="{path:'CATEGORY'}"></ObjectStatus>
+                </firstStatus>
+                <attributes>
+                    <ObjectAttribute text="{CATEGORY}" title="Season"></ObjectAttribute>
+                </attributes> -->
+            </ObjectListItem>
+        </List>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer ></ToolbarSpacer>
+                <Button text="Add" press="onAdd"></Button>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

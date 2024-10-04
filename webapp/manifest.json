@@ -1,0 +1,83 @@
+{
+    "sap.app": {
+        "type": "application",
+        "id": "sap.cs.abap",
+        "dataSources": {
+            "mainService":{
+                "uri": "/sap/opu/odata/sap/ZSAN_PRD_1_SRV_01",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui5":{
+        "models": {
+            "":{
+                "dataSource": "mainService",
+                "type": "sap.ui.model.odata.v2.ODataModel"
+
+            },
+            "fruit":{
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "mockdata/fruits.json"
+            }
+        },
+        "rootView":{
+            "id": "idRoot",
+            "viewName": "sap.cs.abap.view.App",
+            "type": "XML"
+        },
+        "routing": {
+            "config":{
+                "viewPath": "sap.cs.abap.view",
+                "controlId": "idApp",
+                "clearControlAggregation": true
+            },
+            "routes":[
+                {
+                    "pattern": "",
+                    "name": "home",
+                    "target":["narendra","modi"]
+                },
+                {
+                    "pattern": "fruits/{fruitId}",
+                    "name":"detail",
+                    "target":["narendra","putin"]
+                },
+                {
+                    "pattern": "add",
+                    "name":"add",
+                    "target":["narendra","macron"]
+                }
+            ],
+            "targets": {
+                "narendra":{
+                    "viewName": "View1",
+                    "viewId": "idView1",
+                    "controlAggregation": "masterPages",
+                    "viewType": "XML"
+                },
+                "modi":{
+                    "viewName": "Empty",
+                    "viewId": "idEmpty",
+                    "controlAggregation": "detailPages",
+                    "viewType": "XML"
+                },
+                "putin":{
+                    "viewName": "View2",
+                    "viewId": "idView2",
+                    "controlAggregation": "detailPages",
+                    "viewType": "XML"
+                },
+                "macron":{
+                    "viewName": "Add",
+                    "viewId": "idAdd",
+                    "controlAggregation": "detailPages",
+                    "viewType": "XML"
+                }
+            }
+        }
+    }
+}
